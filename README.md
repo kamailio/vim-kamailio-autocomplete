@@ -1,5 +1,4 @@
-Basic Autocomplete VIM Plugin for Kamailio Configuration
-========================================================
+## Basic Autocomplete VIM Plugin for Kamailio Configuration ##
 
 Implementation of a custom auto-complete function for Kamailio configuration
 file.
@@ -8,24 +7,24 @@ See the next blog post for more details and screenshot:
 
   * http://www.kamailio.org/w/2014/09/kamailio-cfg-auto-complete-plugin-for-vim/
 
-Installation
-------------
+### Installation ###
 
 Copy the kamailio.vim and kamailio-XYZ.dictionary files to:
 
+```
   ~/.vim/plugin/kamailio/
+```
 
 From this folder, it can be done with following commands:
 
 ```
 mkdir -p ~/.vim/plugin/kamailio
-cp kamailio*.* ~/.vim/plugin/kamailio
+cp plugin/kamailio*.* ~/.vim/plugin/kamailio
 ```
 
-Activation
-----------
+### Activation ###
 
-Once editing Kamailio configuration file, set the **completefunc** to 
+Once editing Kamailio configuration file, set the **completefunc** to
 **KamailioComplete**:
 
 ```
@@ -42,14 +41,12 @@ can enable automatically the custome auto complete function by adding to
   autocmd FileType kamailio setlocal completefunc=KamailioComplete
 ```
 
-Usage
------
+### Usage ###
 
 While editing the Kamailio configuration file, use **CTRL+x CTRL+u** to
 trigger auto-complete.
 
-Examples
---------
+### Examples ###
 
 (Note: parenthesis are used to surround control key sequences, they must
 not be typed)
@@ -60,8 +57,7 @@ not be typed)
   with '$t', practically listing the config variables starting with 't', such
   as $tu, $time(name), ...
 
-Tips
-----
+### Tips ###
 
 Check next wiki page for other kinds of auto-completion that can be used
 togheter with this plugin and can make writing of Kamailio configuration
@@ -74,8 +70,7 @@ Among them:
   * CTRL+n - complete with next matching word from current buffers
   * CTRL+p - complete with previous matching word from current buffers
 
-Dictionary
-----------
+### Dictionary ###
 
 The plugin is searching for auto-complete matching in all files located in
 plugin directory that have the name in the format *kamailio-XYZ.dictionary*.
@@ -125,8 +120,7 @@ xlogl([ [facility,] level,] format)		@@-- [func] (xlog)
 
 This dictionary record gives the prototype of xlog function from xlog module.
 
-Remarks
--------
+### Remarks ###
 
   * the records are in the order they are matched in dictionary files, thus
   it may require to scroll down in the auto-complete box to find desired
@@ -142,8 +136,7 @@ Remarks
   * not doing sorting at runtim was done for performance reasons, although
   in the future can be added as config option for plugin
 
-To-Do
------
+### To-Do ###
 
 More like a whish list, no timelines committed for completing the items.
 
@@ -152,8 +145,7 @@ More like a whish list, no timelines committed for completing the items.
   save time when knowing what to type for parameters)
   * move the type of parameters to description (or add extra such record)
 
-Contributions
--------------
+### Contributions ###
 
 This plugin was developed mainly as an experiment, having basic prior knowledge
 of VIM plugin development. Enhancements, including major refactoring, are more
@@ -163,9 +155,8 @@ Also, making the dictionary content more helpful for kamailio configuration
 file writers is considered a major target. Feel free to give feedback and
 suggestions.
 
-Copyright
----------
+### Copyright ###
 
-(c) 2014 Daniel-Constantin Mierla (asipto.com)
+(c) 2014-2016 Daniel-Constantin Mierla (asipto.com)
 
 License: GPLv2
